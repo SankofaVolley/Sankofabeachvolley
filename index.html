@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico">
+  <title>Sankofa Beach Volley</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 150px;
+      width: 100%;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 15px 25px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background-color: #fff;
+    }
+
+    input, select, textarea {
+      width: 90%;
+      max-width: 400px;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* BOTÃO WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Sankofa BeachVolley</h1>
+    <img src="sankofa-img.png" alt="Sankofa">
+  </header>
+
+  <!-- Sessão principal -->
+  <section>
+    <h2>Seu Lugar é na Areia</h2>
+    <p>Comece ou evolua no vôlei de praia com a gente.</p>
+    <button class="btn" onclick="scrollToContato()">QUERO PARTICIPAR</button>
+  </section>
+
+  <!-- Serviços -->
+  <section style="background:#111;">
+    <h2>Nossos Serviços</h2>
+    <p>🏐 Treinos</p>
+    <p>🏐 Iniciantes</p>
+    <p>🏐 Profissional</p>
+    <p>🏐 Campeonatos</p>
+  </section>
+
+  <!-- FORMULÁRIO DE INSCRIÇÃO -->
+  <section id="contato">
+    <h2>Inscreva-se</h2>
+
+    <form onsubmit="enviarFormulario(event)">
+      <input type="text" placeholder="Seu nome" required><br>
+
+      <input type="sankofavolley@gmail.com" placeholder="Seu e-mail" required><br>
+
+      <input type="tel" placeholder="Seu telefone / WhatsApp" required><br>
+
+      <select required>
+        <option value="">Nível de experiência</option>
+        <option>Iniciante</option>
+        <option>Intermediário</option>
+        <option>Avançado</option>
+      </select><br>
+
+      <textarea placeholder="Observações"></textarea><br>
+
+      <button class="btn" type="submit">Enviar inscrição</button>
+    </form>
+
+    <p id="mensagem"></p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sankofa Beach Vôlei</p>
+  </footer>
+
+  <!-- BOTÃO WHATSAPP -->
+  <a 
+    class="whatsapp" 
+    href="https://wa.me/5571983558531?text=Olá,%20quero%20participar%20da%20Sankofa%20Beach%20Volley" 
+    target="_blank">
+    💬
+  </a>
+
+  <script>
+    function scrollToContato() {
+      document.getElementById("contato").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function enviarFormulario(event) {
+      event.preventDefault();
+      document.getElementById("mensagem").innerText =
+        "✅ Inscrição enviada! Vamos entrar em contato.";
+    }
+  </script>
+
+</body>
+</html>
